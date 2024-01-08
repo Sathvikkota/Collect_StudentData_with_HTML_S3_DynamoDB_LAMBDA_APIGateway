@@ -50,4 +50,9 @@ Finally click the static website hostig url to view the webpage with student dat
 Fill the form and click submit
 The data is stored in Dynamo DB.
 
+![Screenshot (1172)](https://github.com/Sathvikkota/Collect_StudentData_with_HTML_S3_DynamoDB_LAMBDA_APIGateway/assets/96678527/1bcbaf23-b130-4e80-99ad-7e9615929a99)
+![Screenshot (1173)](https://github.com/Sathvikkota/Collect_StudentData_with_HTML_S3_DynamoDB_LAMBDA_APIGateway/assets/96678527/ba414c2a-11b6-4b5e-aefc-a00914958dc6)
+![Screenshot (1174)](https://github.com/Sathvikkota/Collect_StudentData_with_HTML_S3_DynamoDB_LAMBDA_APIGateway/assets/96678527/b2dfb548-3af7-4517-80ee-16ac112d7360)
+![Screenshot (1175)](https://github.com/Sathvikkota/Collect_StudentData_with_HTML_S3_DynamoDB_LAMBDA_APIGateway/assets/96678527/5daf790e-6e0b-4954-bb30-dc765cb49f53)
+
 
