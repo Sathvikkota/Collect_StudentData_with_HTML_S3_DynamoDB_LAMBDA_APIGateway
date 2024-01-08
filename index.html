@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Student Data</title>
+    <!-- Add some CSS to change client UI -->
+    <style>
+    body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+form {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    width: 500px;
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+label {
+    display: block;
+    margin-bottom: 2px;
+    color: #555;
+}
+
+input {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 12px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input[type="submit"] {
+    background-color: #4caf50;
+    color: white;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+    </style>
+    <script>
+        // define the callAPI function that takes a first name and last name as parameters
+        var callAPI = (studentName,studentID,studentMail,program,year,certificationName,vendorName,certificationUrl,expiryDate)=>{
+            // instantiate a headers object
+            var myHeaders = new Headers();
+            // add content type header to object
+            myHeaders.append("Content-Type", "application/json");
+            // using built in JSON utility package turn object to string and store in a variable
+            var raw = JSON.stringify({"studentName":studentName,"studentID":studentID,"studentMail":studentMail
+        ,"program":program,"year":year,"certificationName":certificationName,"vendorName":vendorName,"certificationUrl":certificationUrl,"expiryDate":expiryDate});
+            // create a JSON object with parameters for API call and store in a variable
+            var requestOptions = {
+                method: 'POST',
+                headers: myHeaders,
+                body: raw,
+                redirect: 'follow'
+            };
+            // make API call with parameters and use promises to get response
+            fetch("https://vi1kiqj5bl.execute-api.ap-south-1.amazonaws.com/test", requestOptions)
+            .then(response => response.text())
+            .then(result => alert(JSON.parse(result).body))
+            .catch(error => console.log('error', error));
+        }
+    </script>
+</head>
+<body>
+    <form>
+        
+        <h2>Student Certification Form</h2>
+        <label for="studentName">Student Name:</label>
+        <input type="text" id="studentName" name="studentName"  required>
+
+        <label for="studentID">Student ID:</label>
+        <input type="text" id="studentID" name="studentID" required>
+
+        <label for="studentMail">Student College Mail:</label>
+        <input type="text" id="studentMail" name="studentMail" placeholder="studentid@kluniversity.in" required>
+
+        <label for="program">Program:</label>
+        <input type="text" id="program" name="program" placeholder="Ex: B.Tech/M.Tech" required>
+
+        <label for="year">Year:</label>
+        <input type="text" id="year" name="year" placeholder="Ex: 1st/2nd/3rd/4th" required>
+
+        <label for="certificationName">Certification Name:</label>
+        <input type="text" id="certificationName" name="certificationName" required>
+
+        <label for="vendorName">Vendor Name:</label>
+        <input type="text" id="vendorName" name="vendorName" placeholder="Ex: AWS/ MICROSOFT/" required>
+
+        <label for="certificationUrl">Certification URL:</label>
+        <input type="url" id="certificationUrl" name="certificationUrl" required>
+
+        <label for="expiryDate">Expiry Date:</label>
+        <input type="date" id="expiryDate" name="expiryDate" required>
+
+        <br>
+
+        <button type="button" onclick="callAPI(document.getElementById('studentName').value,document.getElementById('studentID').value,document.getElementById('studentMail').value
+        ,document.getElementById('program').value,document.getElementById('year').value,document.getElementById('certificationName').value,document.getElementById('vendorName').value
+        ,document.getElementById('certificationUrl').value,document.getElementById('expiryDate').value)">SUBMIT</button>
+    
+    </form>
+</body>
+</html>
