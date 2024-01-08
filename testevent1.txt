@@ -1,0 +1,11 @@
+{
+  "studentID": "2100030279",
+  "studentName": "Sathvik",
+  "studentMail":"lalitheshsathvik777@gmail.com",
+  "program":"B.Tech",
+  "year":"3",
+  "certificationName":"AWS DEVELOPER ASSOCIATE",
+  "vendorName":"AMAZON WEB SERVICES",
+  "certificationUrl":"www.youtube.com",
+  "expiryDate":"2027-12-08"
+}
