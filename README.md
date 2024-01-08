@@ -16,7 +16,7 @@ Select Lambda Service
 Create a function with python run time
 for intial lambda testing you can use test.py file
 Deploy the function 
-and create test event and configure the json with testevent.json
+and create test event and configure the json with testevent.txt
 
 Step4:
 Go to API Gateway Service
@@ -41,7 +41,7 @@ Copy paste the policy.txt data in IAM and update the Table ARN at line 15 and cr
 
 Step6:
 Go to Lambda Function and update the python file with lambda.py file
-Now deploy it and for testing update the event json with testevent1.json
+Now deploy it and for testing update the event json with testevent1.txt
 Click test
 Data is stored in Dynamo DB
 
